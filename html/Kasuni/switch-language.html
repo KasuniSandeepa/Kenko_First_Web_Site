@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>switch language</title>
+        <link rel="shortcut icon" type="image/png" href="#">
+		
+        <link rel="stylesheet" type="text/css" href="src/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="src/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="src/css/main.css">
+		
+		<!--x-style-->
+        <style type="text/css">
+		
+		</style>
+		<!--/x-style-->
+		
+        <script type="text/javascript" src="src/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="src/js/bootstrap.min.js"></script>
+        <!-- <script type="text/javascript" src="switch-language.js"></script> -->
+        <script type="text/javascript" src="switch-language.js"></script>
+		
+		<!--switch-language-script-->
+		<script>		
+		function GetList(chosen) {
+		  console.log(chosen);
+		  alert(chosen);
+		}		
+		</script>
+		<!--/switch-language-script-->		
+		
+    </head>
+    <body>
+	
+        <br>
+        
+        <!--content-->
+        <div class="container rounded border mt-5">
+            <div class="row pt-5 pb-5 pl-3 pr-3" style="background-color:#ffffff">
+                <div class="col-lg-12">
+				
+                    <div class="row">
+                        <div class="col-lg-12">
+
+							<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa fa-language">
+										</i></span>
+								</div>				
+
+								<select id="cmbLanguages" class="form-control" onchange="ToggleLanguage()">
+								<!--<select id="cmbLanguages" class="form-control" onchange="convertContentIntoSinhalaAndEnglish()">-->
+									<option value="English">English</option>
+									<option value="Sinhala">සිංහල</option>
+									<option value="Tamil">தமிழ்</option>
+								</select>								
+							</div>
+
+						</div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="col-lg-12">
+						
+							<label id="lblSelectLanguage">P</label><br>
+							<label id="lblFirstName">Ph</label><br>
+							<label id="lblSelectLandType">Phot</label><br>
+							<label id="lblSelectMultipleCrops">Photo</label><br>
+							<label id="lblSelectArea">Preview</label><br>
+						
+							<label id="lblPatientData">P</label><br>
+							<label id="lblPatientName">Ph</label><br>
+							<label id="lblDate">Phot</label><br>
+							<label id="lblTime">Photo</label><br>
+							<label id="lblNic">Preview</label><br>
+							
+						</div>
+                    </div>
+                
+				</div>
+
+            </div>
+        </div>
+        <!--/content-->
+        
+        <br>
+        
+    </body>
+</html>

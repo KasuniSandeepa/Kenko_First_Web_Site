@@ -1,0 +1,787 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Crop Add - Kenko 1st Agri Business</title>
+  <link rel="shortcut icon" type="image/png" href="dist-assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900"
+        rel="stylesheet"/>
+  <link href="dist-assets/css/themes/lite-purple.min.css" rel="stylesheet"/>
+  <link href="dist-assets/css/plugins/perfect-scrollbar.min.css" rel="stylesheet"/>
+
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+  <!-- jQuery --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Select2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+  <script type="text/javascript">
+    function ReadUrl(input) {
+      if (input.files && input.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('photo_preview').src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+
+  <script type="text/javascript">
+    function initRefineUrl() {
+      window.location.href = refineUrl(window.location.href);
+    }
+  </script>
+
+</head>
+
+<body class="text-left">
+
+
+
+
+
+
+
+<!-- =============== Left side start ================-->
+
+
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900"
+        rel="stylesheet"/>
+  <link href="dist-assets/css/themes/lite-purple.min.css" rel="stylesheet"/>
+  <link href="dist-assets/css/plugins/perfect-scrollbar.min.css" rel="stylesheet"/>
+</head>
+
+
+<body>
+
+
+
+
+
+
+
+<!-- =============== Left side start ================-->
+
+<div class="app-admin-wrap layout-sidebar-large">
+  <div class="main-header" style="background-color:#8eb388;">
+    <div class="logo"><a href="Profile.jsp">
+      <img class="logo" src="dist-assets/images/logo.png" alt="#">
+    </a>
+    </div>
+    <div class="menu-toggle">
+      <i class="i-Align-Justify-All text-muted header-icon" style="background-color:#e3ece1;"></i>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <i class="search-icon text-muted i-Magnifi-Glass1"></i>
+      </div>
+    </div>
+    <div style="margin: auto"></div>
+    <div class="header-part-right">
+      <!-- Full screen toggle -->
+      <i class="i-Full-Screen header-icon d-none d-sm-inline-block"
+         data-fullscreen style="background-color:#e3ece1;"></i>
+      <!-- Language Start -->
+      <div class="dropdown">
+        <div class="badge-top-container" role="button" id="dropdownNotification"
+             data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+          <i class="i-Pen-5 text-muted header-icon" style="background-color:#e3ece1;"></i>
+        </div>
+        <!-- Notification dropdown -->
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownNotification">
+          <a class="dropdown-item" href="#" onclick="">
+            <i class="i-Pen-5 mr-1"></i>English
+          </a>
+          <a class="dropdown-item" href="#" onclick="">
+            <i class="i-Pen-5 mr-1"></i>සිංහල
+          </a>
+          <a class="dropdown-item" href="#" onclick="">
+            <i class="i-Pen-5 mr-1"></i>தமிழ்
+          </a>
+        </div>
+      </div>
+
+      <!-- Language End -->
+      <!-- User avatar dropdown -->
+      <div class="dropdown">
+        <div class="user col align-self-end">
+
+
+
+          <img src="dist-assets/images/faces/2.jpg" id="userDropdown" alt="image_male"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+
+
+
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="Profile.jsp">
+              <i class="i-Lock-User mr-1"></i>John
+            </a>
+            <a class="dropdown-item" href="ProfileUpdate.jsp">
+              <i class="i-Gear mr-1"></i>Account details
+            </a>
+            <a class="dropdown-item" href="UserSignOutServlet">
+              <i class="i-Power-2 mr-1"></i>Sign out
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="side-content-wrap">
+    <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
+      <ul class="navigation-left" style="background-color: #e3ece1;">
+        <li class="nav-item"><a class="nav-item-hold" href="LandAll.jsp">
+          <i class="nav-icon i-Bar-Chart"></i><span class="nav-text">Lands</span></a>
+          <div class="triangle"></div>
+        </li>
+        <li class="nav-item"><a class="nav-item-hold" href="CropAll.jsp">
+          <i class="nav-icon i-Library"></i><span class="nav-text">Crops</span></a>
+          <div class="triangle"></div>
+        </li>
+        <li class="nav-item"><a class="nav-item-hold" href="#">
+          <i class="nav-icon i-Suitcase"></i><span class="nav-text">History</span></a>
+          <div class="triangle"></div>
+        </li>
+      </ul>
+    </div>
+    <div class="sidebar-overlay"></div>
+  </div>
+
+  <!-- =============== Left side End ================-->
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!-- ============ Search UI Start ============= -->
+
+<!-- <div class="search-ui">
+    <div class="search-header">
+        <img src="../../dist-assets/images/logo.png" alt="" class="logo">
+        <button class="search-close btn btn-icon bg-transparent float-right mt-2">
+            <i class="i-Close-Window text-22 text-muted"></i>
+        </button>
+    </div>
+    <input type="text" placeholder="Type here" class="search-input" autofocus>
+    <div class="search-title">
+        <span class="text-muted">Search results</span>
+    </div>
+    <div class="search-results list-horizontal">
+        <div class="list-item col-md-12 p-0">
+            <div class="card o-hidden flex-row mb-4 d-flex">
+                <div class="list-thumb d-flex">
+                    TUMBNAIL
+                    <a href="#">
+                        <img src="../../dist-assets/images/products/headphone-1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="flex-grow-1 pl-2 d-flex">
+                    <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
+                        OTHER DATA
+                        <a href="" class="w-40 w-sm-100">
+                            <div class="item-title">Headphone 1</div>
+                        </a>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">$300
+                            <del class="text-secondary">$400</del>
+                        </p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
+                            <span class="badge badge-danger">Sale</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list-item col-md-12 p-0">
+            <div class="card o-hidden flex-row mb-4 d-flex">
+                <div class="list-thumb d-flex">
+                    TUMBNAIL
+                    <img src="../../dist-assets/images/products/headphone-2.jpg" alt="">
+                </div>
+                <div class="flex-grow-1 pl-2 d-flex">
+                    <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
+                        OTHER DATA
+                        <a href="" class="w-40 w-sm-100">
+                            <div class="item-title">Headphone 1</div>
+                        </a>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">$300
+                            <del class="text-secondary">$400</del>
+                        </p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
+                            <span class="badge badge-primary">New</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list-item col-md-12 p-0">
+            <div class="card o-hidden flex-row mb-4 d-flex">
+                <div class="list-thumb d-flex">
+                    TUMBNAIL
+                    <img src="../../dist-assets/images/products/headphone-3.jpg" alt="">
+                </div>
+                <div class="flex-grow-1 pl-2 d-flex">
+                    <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
+                        OTHER DATA
+                        <a href="" class="w-40 w-sm-100">
+                            <div class="item-title">Headphone 1</div>
+                        </a>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">$300
+                            <del class="text-secondary">$400</del>
+                        </p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
+                            <span class="badge badge-primary">New</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list-item col-md-12 p-0">
+            <div class="card o-hidden flex-row mb-4 d-flex">
+                <div class="list-thumb d-flex">
+                    TUMBNAIL
+                    <img src="../../dist-assets/images/products/headphone-4.jpg" alt="">
+                </div>
+                <div class="flex-grow-1 pl-2 d-flex">
+                    <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
+                        OTHER DATA
+                        <a href="" class="w-40 w-sm-100">
+                            <div class="item-title">Headphone 1</div>
+                        </a>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">$300
+                            <del class="text-secondary">$400</del>
+                        </p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
+                            <span class="badge badge-primary">New</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    PAGINATION CONTROL
+    <div class="col-md-12 mt-5 text-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination d-inline-flex">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div> -->
+<!-- ============ Search UI End ============= -->
+
+<script src="dist-assets/js/plugins/jquery-3.3.1.min.js"></script>
+<script src="dist-assets/js/plugins/bootstrap.bundle.min.js"></script>
+<script src="dist-assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="dist-assets/js/scripts/script.min.js"></script>
+<script src="dist-assets/js/scripts/sidebar.large.script.min.js"></script>
+<script src="dist-assets/js/custom/main.js"></script>
+
+
+
+</body>
+</html>
+<!-- =============== Left side End ================-->
+
+<div class="main-content-wrap sidenav-open d-flex flex-column">
+
+  <!-- ============ Body content start ============= -->
+
+  <div class="main-content">
+    <div class="breadcrumb">
+      <h1>Crop Add</h1>
+      <ul>
+        <li><a href="Profile.jsp">Profile</a></li>
+        <li><a href="LandAll.jsp">Lands</a></li>
+        <li><a href="LandDetails.jsp">Land Details</a></li>
+        <li>Crop Add</li>
+      </ul>
+    </div>
+    <div class="separator-breadcrumb border-top"></div>
+
+    <!-- start of main-content -->
+
+    <!-- form-->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mb-4">
+          <div class="card-body">
+            <form action="CropAddServlet" method="post" enctype="multipart/form-data">
+
+              <!--land-id-->
+              <div class="row">
+                <div class="col-12">
+                  <input type="hidden" name="land_id"
+                         value="1" required>
+                </div>
+              </div>
+              <!--/land-id-->
+
+              <div class="row">
+                <div class="col-md-4 form-group">
+                  <div class="form-group">
+                    <label id="lblCropAddCropType">Crop Type</label>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+													<span class="input-group-text">
+													<i class="search-icon text-muted i-Magnifi-Glass1"></i>
+													</span></div>
+                    <select class="form-control"
+                            id="cmbCropAddCropType" name="crop_type"
+                            aria-label="CropType" aria-describedby="cmbCropAddCropType"
+                            required>
+                      <option value="Carrot">Carrot</option>
+                      <option value="Leaks">Leaks</option>
+                      <option value="Beans">Beans</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4 form-group">
+                  <div class="form-group">
+                    <label id="lblCropAddCropExtentAmount">Crop Extent - Number</label>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+													<span class="input-group-text">
+													<i class="search-icon text-muted i-Magnifi-Glass1"></i>
+													</span></div>
+                    <input class="form-control" type="number"
+                           placeholder="Crop Extent Number"
+                           id="txtCropAddCropExtentNumber" value=""
+                           name="crop_extent_number"
+                           aria-label="CropExtentNumber"
+                           aria-describedby="txtCropAddCropExtentNumber"
+                           min="1" max="99" required/>
+                  </div>
+                </div>
+                <div class="col-md-4 form-group">
+                  <div class="form-group">
+                    <label id="lblCropAddCropExtentMeasurement">
+                      Crop Extent - Measurement</label>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+													<span class="input-group-text">
+													<i class="search-icon text-muted i-Magnifi-Glass1"></i>
+													</span></div>
+                    <select class="form-control"
+                            id="cmbCropAddCropExtentMeasurement"
+                            name="crop_extent_unit"
+                            aria-label="CropExtentMeasurement"
+                            aria-describedby="cmbCropAddCropExtentMeasurement"
+                            required>
+                      <option value="Weeks">Weeks</option>
+                      <option value="Months">Months</option>
+                      <option value="Years">Years</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4 form-group">
+                  <div class="form-group">
+                    <label id="lblCropAddNurseryGrown">Nursery Grown</label>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+													<span class="input-group-text">
+													<i class="search-icon text-muted i-Magnifi-Glass1"></i>
+													</span></div>
+                    <select class="form-control"
+                            id="cmbCropAddNurseryGrown" name="nursery_grown"
+                            aria-label="NurseryGrown"
+                            aria-describedby="cmbCropAddNurseryGrown"
+                            onchange="Show(this.value)"
+                            required>
+                      <option value="No">No</option>
+                      <option value="Yes">Yes</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4 form-group"
+                >
+                  <div style="display:none" id="Nursery_Grown_Number">
+                  <div class="form-group">
+                    <label id="lblCropAddNurseryGrownNumber">Nursery Grown - Number</label>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+													<span class="input-group-text">
+													<i class="search-icon text-muted i-Magnifi-Glass1"></i>
+													</span></div>
+                    <input class="form-control" type="number"
+                           placeholder="Nursery Grown - Number"
+                           id="txtCropAddNurseryGrownNumber" value=""
+                           name="crop_nursery_grown_number"
+                           aria-label="NurseryGrownNumber"
+                           aria-describedby="txtCropAddNurseryGrownNumber"
+                           min="0" max="99"/>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-md-4 form-group" >
+                  <div style="display:none" id="Nursery_Grown_Measurement" >
+                  <div class="form-group">
+                    <label id="lblCropAddNurseryGrownMeasurement">
+                      Nursery Grown - Measurement</label>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+													<span class="input-group-text">
+													<i class="search-icon text-muted i-Magnifi-Glass1"></i>
+													</span></div>
+                    <select class="form-control"
+                            id="cmbCropAddNurseryGrownMeasurement"
+                            name="crop_nursery_grown_unit"
+                            aria-label="NurseryGrownMeasurement"
+                            aria-describedby="cmbCropAddNurseryGrownMeasurement">
+                      <option value="Days">Days</option>
+                      <option value="Weeks">Weeks</option>
+                      <option value="Months">Months</option>
+                    </select>
+                  </div>
+                  </div>
+                </div>
+                <select class="selectpicker" data-live-search="true">
+                  <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
+                  <option data-tokens="mustard">Burger, Shake and a Smile</option>
+                  <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+                  <option data-tokens="kasuni">Kasuni</option>
+                  <option data-tokens="kasani">Kasani</option>
+                </select>
+                <div class="col-md-4 form-group">
+                  <div class="form-group">
+                    <label id="lblCropAddCropPlantedDate">Planted Date</label>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+													<span class="input-group-text">
+													<i class="search-icon text-muted i-Magnifi-Glass1"></i>
+													</span></div>
+                    <input class="form-control" type="date" placeholder="Planted Date"
+                           id="txtCropAddCropPlantedDate" value="" name="crop_planted_date"
+                           aria-label="CropPlantedDate" aria-describedby="txtCropAddCropPlantedDate"
+                           required/>
+                  </div>
+                </div>
+                <div class="col-md-4 form-group">
+                  <div class="form-group">
+                    <label id="lblCropAddCropPhoto">Crop's Photo</label>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+													<span class="input-group-text">
+													<i class="search-icon text-muted i-Magnifi-Glass1"></i>
+													</span></div>
+                    <div class="custom-file">
+                      <input class="custom-file-input" id="imgCropAddCropPhoto"
+                             type="file" name="crop_photo"
+                             aria-describedby="imgCropAddCropPhoto"
+                             onchange="ReadUrl(this)"/>
+                      <label class="custom-file-label"
+                             for="lblCropAddCropPhoto">Choose file</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="col-md-4 form-group">&nbsp;</div> -->
+                <div class="col-md-4 form-group">
+                  <div class="form-group">
+                    &nbsp;
+                  </div>
+                  <button class="btn btn-primary">Add New Crop</button>
+                </div>
+                <div class="col-md-4 form-group">
+                  <div class="form-group">
+                    <label id="lblCropAddCropPhotoSelected">Selected Crop's Photo</label>
+                  </div>
+                  <div class="input-group">
+                    <img class="form-control" src="#" id="photo_preview"
+                         name="crop_photo_selected" style="width:100%; height:auto;"
+                         aria-label="CropAddCropPhotoSelected"
+                         aria-describedby="imgAddCropPhotoSelected">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /form-->
+
+    <!-- end of main-content -->
+
+  </div>
+
+  <!-- ============ Body content end ============= -->
+
+  <!--Footer Start-->
+
+  <html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900"
+          rel="stylesheet"/>
+    <link href="dist-assets/css/themes/lite-purple.min.css" rel="stylesheet"/>
+    <link href="dist-assets/css/plugins/perfect-scrollbar.min.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+
+  <!-- Footer Start -->
+  <div class="flex-grow-1"></div>
+  <div class="app-footer" style="background: #e3ece1;">
+    <div class="row">
+      <div class="col-md-9">
+        <!-- <p><strong>Footer</strong></p> -->
+        <p>Description | Links
+          <sunt></sunt>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom border-top pt-3 d-flex flex-column flex-sm-row align-items-center">
+      <span class="flex-grow-1"></span>
+      <div class="d-flex align-items-center">
+        <a href="Profile.jsp">
+          <img class="logo" src="dist-assets/images/logo.png" alt="#">
+        </a>
+        <div>
+          <p class="small m-0">&copy;&nbsp;<script>document.write(new Date().getFullYear());</script>
+            Kenko 1st Agri Business
+          </p>
+          <p class="small m-0">All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom border-top mt-3 pt-3 d-flex flex-column flex-sm-row align-items-center">
+      <div class="d-flex align-items-center">
+        <div>
+          <p class="m-0 text-small text-muted">Developed By &copy;
+            <script>document
+                    .write(new Date().getFullYear());
+            </script>&nbsp;<a href="https://www.mobios.lk/">mobiOs</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer end -->
+
+  <script src="dist-assets/js/plugins/jquery-3.3.1.min.js"></script>
+  <script src="dist-assets/js/plugins/bootstrap.bundle.min.js"></script>
+  <script src="dist-assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="dist-assets/js/scripts/script.min.js"></script>
+  <script src="dist-assets/js/scripts/sidebar.large.script.min.js"></script>
+
+  </body>
+  </html>
+  <!--Footer end-->
+
+</div>
+
+<!-- ============ Search UI Start ============= -->
+
+<!-- <div class="search-ui">
+    <div class="search-header">
+        <img src="../../dist-assets/images/logo.png" alt="" class="logo">
+        <button class="search-close btn btn-icon bg-transparent float-right mt-2">
+            <i class="i-Close-Window text-22 text-muted"></i>
+        </button>
+    </div>
+    <input type="text" placeholder="Type here" class="search-input" autofocus>
+    <div class="search-title">
+        <span class="text-muted">Search results</span>
+    </div>
+    <div class="search-results list-horizontal">
+        <div class="list-item col-md-12 p-0">
+            <div class="card o-hidden flex-row mb-4 d-flex">
+                <div class="list-thumb d-flex">
+                    TUMBNAIL
+                    <a href="#">
+                        <img src="../../dist-assets/images/products/headphone-1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="flex-grow-1 pl-2 d-flex">
+                    <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
+                        OTHER DATA
+                        <a href="" class="w-40 w-sm-100">
+                            <div class="item-title">Headphone 1</div>
+                        </a>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">$300
+                            <del class="text-secondary">$400</del>
+                        </p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
+                            <span class="badge badge-danger">Sale</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list-item col-md-12 p-0">
+            <div class="card o-hidden flex-row mb-4 d-flex">
+                <div class="list-thumb d-flex">
+                    TUMBNAIL
+                    <img src="../../dist-assets/images/products/headphone-2.jpg" alt="">
+                </div>
+                <div class="flex-grow-1 pl-2 d-flex">
+                    <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
+                        OTHER DATA
+                        <a href="" class="w-40 w-sm-100">
+                            <div class="item-title">Headphone 1</div>
+                        </a>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">$300
+                            <del class="text-secondary">$400</del>
+                        </p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
+                            <span class="badge badge-primary">New</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list-item col-md-12 p-0">
+            <div class="card o-hidden flex-row mb-4 d-flex">
+                <div class="list-thumb d-flex">
+                    TUMBNAIL
+                    <img src="../../dist-assets/images/products/headphone-3.jpg" alt="">
+                </div>
+                <div class="flex-grow-1 pl-2 d-flex">
+                    <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
+                        OTHER DATA
+                        <a href="" class="w-40 w-sm-100">
+                            <div class="item-title">Headphone 1</div>
+                        </a>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">$300
+                            <del class="text-secondary">$400</del>
+                        </p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
+                            <span class="badge badge-primary">New</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list-item col-md-12 p-0">
+            <div class="card o-hidden flex-row mb-4 d-flex">
+                <div class="list-thumb d-flex">
+                    TUMBNAIL
+                    <img src="../../dist-assets/images/products/headphone-4.jpg" alt="">
+                </div>
+                <div class="flex-grow-1 pl-2 d-flex">
+                    <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
+                        OTHER DATA
+                        <a href="" class="w-40 w-sm-100">
+                            <div class="item-title">Headphone 1</div>
+                        </a>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100">$300
+                            <del class="text-secondary">$400</del>
+                        </p>
+                        <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
+                            <span class="badge badge-primary">New</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    PAGINATION CONTROL
+    <div class="col-md-12 mt-5 text-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination d-inline-flex">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div> -->
+<!-- ============ Search UI End ============= -->
+
+<script src="dist-assets/js/plugins/jquery-3.3.1.min.js"></script>
+<script src="dist-assets/js/plugins/bootstrap.bundle.min.js"></script>
+<script src="dist-assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="dist-assets/js/scripts/script.min.js"></script>
+<script src="dist-assets/js/scripts/sidebar.large.script.min.js"></script>
+<script src="dist-assets/js/custom/main.js"></script>
+
+<script>
+  function Show(value){
+    console.log(value);
+
+    var NurseryGrownNumberField = document.getElementById("Nursery_Grown_Number");
+    var NurseryGrownMeasurement = document.getElementById("Nursery_Grown_Measurement");
+
+    if(value=="Yes"){
+
+
+      NurseryGrownNumberField.style.display = "block";
+      NurseryGrownMeasurement.style.display = "block";
+
+    }else if(value=="No"){
+
+      NurseryGrownNumberField.style.display = "none";
+      NurseryGrownMeasurement.style.display = "none";
+
+    }
+  }
+</script>
+
+</body>
+</html>

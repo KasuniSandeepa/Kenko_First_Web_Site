@@ -1,0 +1,44 @@
+html, body{
+    background-color:#f7f7f7;
+    color: #555;
+}
+.border{
+    border:solid 1px #ddd;
+}
+.border-rounded{
+    border-radius: 20px;
+}
+.card{
+    border-radius:0;
+    margin-bottom:20px;
+}
+.card-body{
+    padding-bottom:0;
+}
+ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+.tab-content{
+    margin-top:20px;
+}
+.back-to-top {
+    z-index: 10;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    opacity: 0.25;
+}
+.back-to-top:hover {
+    opacity: 0.5;
+}
+.full-height {
+    height: 100%;
+}
+.bg-black {
+     background-color: #000000;
+}
+#body-content{
+    min-height:450px;
+}

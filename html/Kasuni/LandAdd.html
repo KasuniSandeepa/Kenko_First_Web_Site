@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Add Land - Kenko 1st</title>
+  <!--<link rel="shortcut icon" type="image/png" href="src/images/logos/favicon.png">-->
+  <link rel="shortcut icon" type="image/png" href="./src/images/logos/favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="./src/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./src/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./src/css/main.css">
+
+  <%--    <script type="text/javascript" src="./src/js/jquery-3.2.1.min.js"></script>--%>
+  <%--    <script type="text/javascript" src="./src/js/bootstrap.min.js"></script>--%>
+  <%--<script type="text/javascript" src="./src/js/main.js"></script>--%>
+
+  <!-- jQuery --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Select2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+  <script type="text/javascript">
+    //--show and hide password inside an class(ed) div > a
+    $(document).ready(function () {
+      $(".show_hide_password a").on('click', function (event) {
+        event.preventDefault();
+        if ($('.show_hide_password input').attr("type") == "text") {
+          $('.show_hide_password input').attr('type', 'password');
+          $('.show_hide_password i').addClass("fa-eye-slash");
+          $('.show_hide_password i').removeClass("fa-eye");
+        } else if ($('.show_hide_password input').attr("type") == "password") {
+          $('.show_hide_password input').attr('type', 'text');
+          $('.show_hide_password i').removeClass("fa-eye-slash");
+          $('.show_hide_password i').addClass("fa-eye");
+        }
+      });
+    });
+  </script>
+
+  <script type="text/javascript">
+    function initRefineUrl() {
+      window.location.href = refineUrl(window.location.href);
+    }
+  </script>
+
+  <script type="text/javascript">
+    function PreviewImageBeforeSaving(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('land_photo_preview').src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+
+  <script src="dropdown_change.js"></script>
+
+</head>
+<body>
+
+
+
+<!--land-add-->
+<div class="container rounded bg-white mt-5 mb-5">
+  <div class="row pt-5 pb-5 pl-3 pr-3">
+    <div class="col-lg-12">
+
+      <!--row-->
+      <div class="row d-flex">
+
+        <!--sidebar-->
+        <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 p-4">
+
+          <!--include-sidebar-->
+          <%@include file="SideBar.jsp" %>
+
+        </div>
+        <!--/sidebar-->
+
+
+        <!--content-->
+        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 p-4">
+
+          <!--list-->
+          <div class="row d-flex justify-content-center">
+            <div class="col-12">
+
+              <!--row-->
+              <div class="row mb-2 d-flex">
+                <div class="col-12">
+                  <h2 class="text-secondary">Add A New Land</h2>
+                </div>
+              </div>
+              <!--/row-->
+
+              <!--row-->
+              <div class="row d-flex justify-content-center">
+                <div class="col-12">
+
+                  <!--form-->
+                  <form action="LandAddServlet" method="post" enctype="multipart/form-data">
+
+                    <div class="row mb-2 align-items-center">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <label>Land Address</label>
+                        <div class="form-group input-group">
+                          <div class="input-group-prepend">
+														<span class="input-group-text"><i class="fa fa-bus">
+															</i></span>
+                          </div>
+                          <input type="text" class="form-control"
+                                 name="land_address" placeholder="Land Address"
+                                 minlength="10" maxlength="250" required>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="row mb-2 align-items-center">
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>Province</label>
+                        <div class="form-group input-group">
+                          <div class="input-group-prepend">
+														<span class="input-group-text"><i class="fa fa-bus">
+															</i></span>
+                          </div>
+                          <select class="form-control" name="land_province" id="landProvince" onchange="SetDistricts()" required>
+                            <option value="Select Province" disabled selected hidden>Select Province</option>
+                            <option value="Western">Western</option>
+                            <option value="Central">Central</option>
+                            <option value="Southern">Southern</option>
+                            <option value="Uva">Uva</option>
+                            <option value="Sabaragamuwa">Sabaragamuwa </option>
+                            <option value="North Western ">North Western </option>
+                            <option value="North Central"> North Central</option>
+                            <option value="Northern">Northern </option>
+                            <option value="Eastern">Eastern  </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>District</label>
+                        <div class="form-group input-group">
+                          <div class="input-group-prepend">
+														<span class="input-group-text"><i class="fa fa-car">
+															</i></span>
+                          </div>
+                          <select class="form-control" name="land_district"  id="landDistrict" onchange="SetGNDivisions()" required>
+                            <option value="Select District" disabled selected hidden>Select District</option>
+                        <!--  <option value="Colombo">Colombo</option>
+                            <option value="Gampaha">Gampaha</option>
+                            <option value="Kaluthara">Kaluthara</option>-->
+
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-2 align-items-center">
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>GN Division</label>
+                        <div class="form-group input-group">
+                          <div class="input-group-prepend">
+														<span class="input-group-text"><i class="fa fa-bicycle">
+															</i></span>
+                          </div>
+                          <select class="form-control" name="land_gn_division"  id="landGNDivision" required>
+                            <option value="Select GN Division" disabled selected hidden>Select GN Division</option>
+                       <!--     <option value="GN Division 01">GN Division 01</option>
+                            <option value="GN Division 02">GN Division 02</option>
+                            <option value="GN Division 03">GN Division 03</option>
+                            <option value="GN Division 04">GN Division 04</option>-->
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>Land Type</label>
+                        <div class="form-group input-group">
+                          <div class="input-group-prepend">
+														<span class="input-group-text"><i class="fa fa-map-marker">
+															</i></span>
+                          </div>
+                          <select class="form-control" name="land_type" required>
+                            <option value="Paddy Land">Paddy Land</option>
+                            <option value="Dry Land">Dry Land</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-2 align-items-center">
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>Land Extent Amount</label>
+                        <div class="form-group input-group">
+                          <div class="input-group-prepend">
+														<span class="input-group-text"><i class="fa fa-map-marker">
+															</i></span>
+                          </div>
+                          <input type="number" class="form-control"
+                                 name="land_extent_amount" placeholder="Land Extent"
+                                 min="1" max="100" required>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>Land Extent Measurement</label>
+                        <div class="form-group input-group">
+                          <div class="input-group-prepend">
+														<span class="input-group-text"><i class="fa fa-bicycle">
+															</i></span>
+                          </div>
+                          <select class="form-control" name="land_extent_measurement" required>
+                            <option value="Square Metres">Square Metres</option>
+                            <option value="Square Feet">Square Feet</option>
+                            <option value="Perch">Perch</option>
+                            <option value="Acre">Acre</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-2 align-items-center">
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>Cultivated Status</label>
+                        <div class="form-group input-group">
+                          <div class="input-group-prepend">
+														<span class="input-group-text"><i class="fa fa-bicycle">
+															</i></span>
+                          </div>
+                          <select class="form-control" name="land_cultivated_status" required>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>Ownership Status</label>
+                        <div class="form-group input-group">
+                          <div class="input-group-prepend">
+														<span class="input-group-text"><i class="fa fa-bicycle">
+															</i></span>
+                          </div>
+                          <select class="form-control" name="land_ownership_status" required>
+                            <option value="Owned">Owned</option>
+                            <option value="Rented">Rented</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-12">
+                        <input type="hidden" name="farmer_id"
+                       required>
+                      </div>
+
+                    </div>
+
+                    <div class="row mb-2 align-items-center">
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>Photo</label>
+                        <div class="form-group input-group">
+                          <div class="input-group-prepend">
+														<span class="input-group-text"><i class="fa fa-camera">
+															</i></span>
+                            <input id="land_photo" type="file" class="form-control"
+                                   name="land_photo"	onchange="PreviewImageBeforeSaving(this)">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-12 mt-2 pt-2">
+                        <button class="btn btn-dark">Add New Land</button>
+                      </div>
+                    </div>
+
+                    <div class="row mb-2 align-items-center">
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>Photo Preview</label>
+                        <div class="form-group input-group">
+                          <div class="card">
+                            <center>
+                              <img class="img-fluid" id="land_photo_preview" src="#" alt="preview"
+                                   style="height: 300px;">
+                            </center>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </form>
+                  <!--/form-->
+
+                </div>
+              </div>
+              <!--/row-->
+
+            </div>
+          </div>
+          <!--/list-->
+
+
+        </div>
+        <!--/content-->
+
+
+      </div>
+      <!--/row-->
+
+    </div>
+
+  </div>
+</div>
+<!--/land-add-->
+<script>
+
+
+
+    $(document).ready(function(){
+
+    // Initialize select2
+    $("#landDistrict").select2();
+
+    // Read selected option
+   /* $('#but_read').click(function(){
+    var username = $('#selUser option:selected').text();
+    var userid = $('#selUser').val();
+
+    $('#result').html("id : " + userid + ", name : " + username);
+
+  });*/
+  });
+
+
+
+
+
+
+ /* function myFunction() {
+
+    DeleteAllValues();
+    let province_dropdown = document.getElementById("landProvince");
+    let district_dropdown = document.getElementById("landDistrict");
+    let selectedProvince = province_dropdown.value;
+    console.log(selectedProvince);
+    /!* console.log("Kasuni");*!/
+
+    let districts = new Array();
+    if (selectedProvince == "Western") {
+       districts = new Array("Colombo", "Kaluthara", "Gampaha");
+    }else if(selectedProvince == "Central"){
+      districts = new Array("Kandy","Matale" ,"Nuwaraeliya");
+    }else if(selectedProvince == "Southern"){
+      districts = new Array("Galle","Hambantota" ,"Matara");
+    }
+
+    for (var i = 0; i < districts.length; ++i) {
+      addOption(district_dropdown, districts[i], districts[i]);
+    }
+  }
+
+  function addOption(selectbox,text,value )
+  {
+    var optn = document.createElement("OPTION");
+    optn.text = text;
+    optn.value = value;
+    selectbox.options.add(optn);
+  }
+
+  function DeleteAllValues() {
+    var listBox = document.getElementById("landDistrict");
+    listBox.options.length = 0;
+    return false;
+  }*/
+</script>
+
+
+
+
+</body>
+</html>
